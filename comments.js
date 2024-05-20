@@ -1,12 +1,15 @@
-// create web server
 var http = require('http');
 var fs = require('fs');
 
-var server = http.createServer(function (req, res) {
-    console.log('Request was made: ' + req.url);
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
-    myReadStream.pipe(res);
+// middleware
+app.use(express.static('public'));
+
+// route
+app.get('/', (req, res) => {
+    // code inside the route handler
+}); // Add this closing curly brace
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
-server.listen(3000, 'localhost'); // Fix: Added closing quotation mark after the port number
