@@ -11,6 +11,8 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     // code inside the route handler
 }); // Add this closing curly brace
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
